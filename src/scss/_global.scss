@@ -44,6 +44,7 @@ body {
   @extend %inter-regular;
   font-size: 14px;
   line-height: 16.94px;
+  margin: 0 15px;
 }
 
 .wrapper {
@@ -52,6 +53,10 @@ body {
   border-radius: 20px;
   max-width: 1080px;
   margin: 50px auto;
+}
+
+.greenColor {
+  color:#9dd558;
 }
 
 .greenButton {
@@ -80,6 +85,11 @@ body {
 
   &:active {
     background-color: darken(#9dd558, 5%);
+  }
+
+  &:disabled {
+    background-color: #bebebe;
+    cursor: default;
   }
 
   img {

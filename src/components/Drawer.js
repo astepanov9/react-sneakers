@@ -5,7 +5,7 @@ import { useCart } from '../hooks/useCart';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function Drawer({ onClose, onRemove, items = [] }) {
+function Drawer({ onClose, onRemove, items = [], opened }) {
     const { cartItems, setCartItems, totalPrice } = useCart();
     const [isOrderComplete, setIsOrderComplete] = React.useState(false);
     const [orderId, setOrderId] = React.useState(null);
@@ -36,7 +36,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
     };
 
     return (
-        <div className="drawer">
+        <div className={`drawer ${opened ? 'drawer__visible' : ''}`}>
             <div className="drawer__body">
                 <h2>Корзина <img onClick={onClose} className="drawer__close" src="/img/close.svg" alt="remote" /></h2>
                 {items.length > 0 ? (

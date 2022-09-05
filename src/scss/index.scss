@@ -60,6 +60,19 @@
   z-index: 1;
   width: 100%;
   height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  overflow: hidden;
+
+  &__visible {
+    visibility: visible;
+    opacity: 1;
+
+    .drawer__body {
+      transform: translateX(0);
+    }
+  }
 
   &__body {
     position: absolute;
@@ -71,6 +84,8 @@
     padding: 30px;
     display: flex;
     flex-direction: column;
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out
   }
 
   h2 {
@@ -123,7 +138,7 @@
   &__item-remove {
     opacity: .5;
     cursor: pointer;
-    transition: .3s ease-in-out;
+    transition: hover .3s ease-in-out;
 
     &:hover {
       opacity: 1;
